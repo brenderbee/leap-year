@@ -11,7 +11,9 @@ $(document).ready(function() {
 
 // Business Logic
 var leapYear = function(year) {
-  if ((year % 4 ===0) && (year % 100 !==0) || (year % 4 ===0)) {
+  if (isNaN(year)) {
+    $("#result").text("Please enter a year.");
+  } else if ((year % 4 ===0) && (year % 100 !==0) || (year % 4 ===0)) {
     $("#result").text("This is a leap year!");
   } else {
     $("#result").text("This is NOT a leap year!");
